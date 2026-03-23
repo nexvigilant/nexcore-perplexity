@@ -1,0 +1,37 @@
+
+[package]
+name = "nexcore-perplexity"
+version = "1.0.0"
+edition = "2024"
+rust-version = "1.85"
+authors = ["NexVigilant Team <team@nexvigilant.com>"]
+license = "LicenseRef-Proprietary"
+repository = "https://github.com/nexvigilant/nexcore"
+description = "Perplexity AI Sonar API client for search-grounded research"
+
+[dependencies]
+nexcore-error = { workspace = true }
+# Lex Primitiva grounding
+nexcore-lex-primitiva = { version = "0.1.0", path = "../nexcore-lex-primitiva", registry = "nexcore" }
+
+# HTTP client
+reqwest = { version = "0.12.5", features = ["json", "rustls-tls"] }
+
+# Async runtime
+tokio = { version = "1.38.0", features = ["full"] }
+
+# Serialization
+serde = { version = "1.0.204", features = ["derive"] }
+serde_json = { version = "1.0.120" }
+
+# Error handling
+
+# Logging
+tracing = { version = "0.1.40" }
+
+[dev-dependencies]
+tempfile = { version = "3.10.1" }
+
+
+[lints]
+workspace = true
